@@ -11,7 +11,7 @@ class ComicsRepository(private val marvelService: MarvelService) {
         val response = marvelService.getComics()
         return response.data?.results?.let { it ->
             it.map { result ->
-                Comic(result.title)
+                Comic.create(result)
             }
         } ?: listOf()
     }

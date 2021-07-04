@@ -26,11 +26,19 @@ class HomeViewModel @Inject constructor(
             loading = true
         )
         viewModelScope.launch {
-            val events = comicsRepository.getComics()
-            _viewState.value = _viewState.value.copy(
-                comics = events,
-                loading = false,
-            )
+            try {
+                val events = comicsRepository.getComics()
+                _viewState.value = _viewState.value.copy(
+                    comics = events,
+                    loading = false,
+                    error = false,
+                )
+            } catch (e: Exception) {
+                _viewState.value = _viewState.value.copy(
+                    loading = false,
+                    error = true,
+                )
+            }
         }
     }
 }

@@ -7,10 +7,11 @@ import retrofit2.http.Query
 
 interface MarvelService {
 
-    @GET("comics?characters=1009156&dateRange=2020-01-01,2021-05-02")
+    @GET("comics?dateRange=2020-01-01,2021-05-02")
     suspend fun getComics(
         @Query("ts") ts: String = System.currentTimeMillis().toString(),
         @Query("apikey")secret: String = BuildConfig.API_KEY,
         @Query("hash")hash: String = ApiHaspProvider.getHash(ts),
+        @Query("characters")charId: String = ApocalypseConst.apocalypseCharId,
         ): ApiResponse
 }
