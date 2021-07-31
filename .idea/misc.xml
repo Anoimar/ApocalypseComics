@@ -14,10 +14,16 @@
         <entry key="../../../../layout/compose-model-1624809412219.xml" value="0.15498310810810811" />
         <entry key="../../../../layout/compose-model-1625402575870.xml" value="0.16765202702702703" />
         <entry key="../../../../layout/compose-model-1625407465398.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1627541913971.xml" value="0.45265815531152537" />
+        <entry key="../../../../layout/compose-model-1627752468579.xml" value="0.14722222222222223" />
+        <entry key="../../../../layout/compose-model-1627761387477.xml" value="0.14444444444444443" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19010416666666666" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -3,7 +3,6 @@ package com.thernat.ageofapocalypse.home
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -14,18 +13,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.thernat.ageofapocalypse.components.BigComicCard
+import com.thernat.ageofapocalypse.detail.detailScreenId
 import com.thernat.ageofapocalypse.ui.mockEvents
 import com.thernat.ageofapocalypse.ui.theme.AgeOfApocalypseTheme
 
 const val homeScreenId = "home"
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController?) {
     val homeViewModel: HomeViewModel = hiltViewModel()
     val currentState: State<HomeViewState> = homeViewModel.viewState.collectAsState()
 
-    HomeScreenScaffold(state = currentState.value)
+    HomeScreenScaffold(
+        state = currentState.value,
+        navController = navController
+    )
 }
 
 @Composable
@@ -59,7 +63,8 @@ private fun HomeScreenError() {
 
 @Composable
 fun HomeScreenScaffold(
-    state: HomeViewState
+    state: HomeViewState,
+    navController: NavController?,
 ) {
     Scaffold(
         topBar = {
@@ -80,20 +85,22 @@ fun HomeScreenScaffold(
                 HomeScreenError()
             }
             else -> {
-                HomeScreenContent(state)
+                HomeScreenContent(state, navController)
             }
         }
     }
 }
 
 @Composable
-fun HomeScreenContent(state: HomeViewState) {
-    LazyRow() {
+fun HomeScreenContent(state: HomeViewState,navController: NavController?) {
+    LazyRow {
         items(state.comics) { comic ->
             BigComicCard(
                 name = comic.name,
                 imageUrl = comic.imageUrl
-            )
+            ) {
+                navController?.navigate("$detailScreenId/${comic.id}")
+            }
         }
     }
 }
@@ -105,7 +112,7 @@ private fun HomeScreenPreview() {
         comics = mockEvents
     )
     AgeOfApocalypseTheme() {
-        HomeScreenScaffold(state = previewState)
+        HomeScreenScaffold(state = previewState, null)
         
     }
 }

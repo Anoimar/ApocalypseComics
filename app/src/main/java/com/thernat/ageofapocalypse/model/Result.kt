@@ -29,7 +29,7 @@ data class Result(
     @Json(name = "format")
     val format: String?,
     @Json(name = "id")
-    val id: Int?,
+    val id: Int,
     @Json(name = "images")
     val images: List<Image>?,
     @Json(name = "isbn")

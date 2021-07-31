@@ -19,8 +19,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "API_KEY", "\"???\""
-        buildConfigField "String", "PRIVATE_KEY", "\"???\""
+        buildConfigField "String", "API_KEY", "\"xxxxx\""
+        buildConfigField "String", "PRIVATE_KEY", "\"xxxxx\""
         vectorDrawables {
             useSupportLibrary true
         }

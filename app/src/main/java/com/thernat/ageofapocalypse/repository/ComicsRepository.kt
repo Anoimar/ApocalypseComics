@@ -2,8 +2,6 @@ package com.thernat.ageofapocalypse.repository
 
 import com.thernat.ageofapocalypse.api.MarvelService
 import com.thernat.ageofapocalypse.model.Comic
-import com.thernat.ageofapocalypse.ui.mockEvents
-import kotlinx.coroutines.delay
 
 class ComicsRepository(private val marvelService: MarvelService) {
 
