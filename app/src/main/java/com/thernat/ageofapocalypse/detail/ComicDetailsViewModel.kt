@@ -13,4 +13,8 @@ class ComicDetailsViewModel @Inject constructor(
 ) : ViewModel() {
     private val _viewState = MutableStateFlow(ComicDetailsScreenState(null))
     val viewState: StateFlow<ComicDetailsScreenState> = _viewState
+
+    fun setComicId(id: Int) {
+        _viewState.value = ComicDetailsScreenState(comicsRepository.getComic(id))
+    }
 }

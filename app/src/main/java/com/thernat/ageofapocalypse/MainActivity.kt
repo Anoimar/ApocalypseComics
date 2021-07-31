@@ -32,9 +32,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("$detailScreenId/{comicId}",
                         arguments = listOf(navArgument("comicId"){
-                            type = NavType.StringType
+                            type = NavType.IntType
                         })) {navBackStackEntry ->
-                        ComicDetailsScreen(navBackStackEntry.arguments?.getString("comicId"))
+                        ComicDetailsScreen(navBackStackEntry.arguments?.getInt("comicId"))
                     }
                 }
             }
