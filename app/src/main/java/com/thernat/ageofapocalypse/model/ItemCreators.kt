@@ -11,5 +11,5 @@ data class ItemCreators(
     @Json(name = "resourceURI")
     val resourceURI: String?,
     @Json(name = "role")
-    val role: String?
+    val role: String
 )

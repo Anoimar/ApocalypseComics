@@ -22,6 +22,7 @@ fun BigComicCard(
         modifier = Modifier
             .padding(16.dp)
             .width(192.dp)
+            .wrapContentHeight()
             .clickable {
                 onCardClicked?.invoke()
             }
@@ -30,7 +31,6 @@ fun BigComicCard(
             Image(
                 painter = rememberCoilPainter(
                     request = imageUrl,
-                    previewPlaceholder = R.drawable.notification_tile_bg,
                 ),
                 contentDescription = "Content description",
             )

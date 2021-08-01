@@ -3,6 +3,7 @@ package com.thernat.ageofapocalypse
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
@@ -20,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -34,7 +36,9 @@ class MainActivity : ComponentActivity() {
                         arguments = listOf(navArgument("comicId"){
                             type = NavType.IntType
                         })) {navBackStackEntry ->
-                        ComicDetailsScreen(navBackStackEntry.arguments?.getInt("comicId"))
+                        ComicDetailsScreen(navBackStackEntry.arguments?.getInt("comicId"),
+                            navController
+                        )
                     }
                 }
             }
