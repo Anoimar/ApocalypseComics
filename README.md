@@ -5,3 +5,7 @@ but as currently for every comic the api returns null I resigned from the field.
 
 To start the App you will need a Marvel's api-key and private key from https://developer.marvel.com/ . Just provide them to appropriate gradle fields. All hash count logic will be done by ApiHashProvider class.
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/7840940/129461365-d00d575e-8d38-4ce4-b65c-015ebbf2c9b3.png" width=30% height=30%>                                                     <img src="https://user-images.githubusercontent.com/7840940/129461615-94397f5b-c08b-4d30-895d-9b964a08e345.png" width=30% height=30%>
+  </p>
+  
