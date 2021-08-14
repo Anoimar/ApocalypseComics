@@ -19,8 +19,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "API_KEY", "\"xxxxx\""
-        buildConfigField "String", "PRIVATE_KEY", "\"xxxxx\""
+        buildConfigField "String", "API_KEY", "\"xxx\""
+        buildConfigField "String", "PRIVATE_KEY", "\"xxx\""
         vectorDrawables {
             useSupportLibrary true
         }
@@ -59,8 +59,8 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02'
-    implementation 'androidx.activity:activity-compose:1.3.0'
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha05"
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
     implementation("com.google.dagger:hilt-android:$hilt_version")
