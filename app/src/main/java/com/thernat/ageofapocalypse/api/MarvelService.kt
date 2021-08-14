@@ -11,7 +11,7 @@ interface MarvelService {
     suspend fun getComics(
         @Query("ts") ts: String = System.currentTimeMillis().toString(),
         @Query("apikey")secret: String = BuildConfig.API_KEY,
-        @Query("hash")hash: String = ApiHaspProvider.getHash(ts),
+        @Query("hash")hash: String = ApiHashProvider.getHash(ts),
         @Query("characters")charId: String = ApocalypseConst.apocalypseCharId,
         ): ApiResponse
 }
